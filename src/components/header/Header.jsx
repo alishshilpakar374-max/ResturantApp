@@ -29,7 +29,7 @@ function Header() {
       <Container>
         <div className="flex items-center justify-between py-2 sm:text-sm lg:text-base">
           {/* Logo */}
-          <div className="hidden font-bold lg:block">Waypoint</div>
+          <h1 className="hidden font-bold lg:block">Waypoint Nepal</h1>
 
           {/* Navigation */}
           <nav className="mx-auto flex w-full justify-evenly text-xs sm:gap-6 sm:text-sm lg:mx-0 lg:w-auto lg:justify-normal lg:gap-6 lg:text-base">

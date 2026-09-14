@@ -66,9 +66,9 @@ function Home() {
               <div className="mb-3 flex items-center gap-2">
                 <span className="h-px w-7 bg-(--primary)" />
 
-                <p className="text-xs font-medium uppercase tracking-[0.2em] text-(--primary) sm:text-sm">
-                  Welcome to Waypoint
-                </p>
+                <h1 className="text-xs font-medium uppercase tracking-[0.2em] text-(--primary) sm:text-sm">
+                  Welcome to Waypoint Nepal
+                </h1>
               </div>
 
               {/* Heading */}
