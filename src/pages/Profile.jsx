@@ -23,6 +23,32 @@ function Profile() {
   const [showTheme, setShowTheme] = useState(false);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "system");
 
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+
+    return savedTheme === "light" ||
+      savedTheme === "dark" ||
+      savedTheme === "system"
+      ? savedTheme
+      : "system";
+  });
+
+  useEffect(() => {
+    if (theme !== "system") return;
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const handleChange = (event) => {
+      document.documentElement.classList.toggle("dark", event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, [theme]);
+
   return (
     <main className="min-h-screen bg-slate-50 pb-20 text-gray-800 transition-colors dark:bg-slate-900 dark:text-gray-100 lg:pb-8">
       <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8">

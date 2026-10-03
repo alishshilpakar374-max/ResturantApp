@@ -1,6 +1,25 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("theme");
+
+        const systemPrefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+
+        const theme =
+          savedTheme === "dark" || savedTheme === "light"
+            ? savedTheme
+            : systemPrefersDark
+              ? "dark"
+              : "light";
+
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      })();
+    </script>
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
