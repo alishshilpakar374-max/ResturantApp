@@ -14,14 +14,13 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
+import { useEffect } from "react";
 
 import { ProfileSvg } from "../assets/svg";
 
 function Profile() {
   const [showMenu, setShowMenu] = useState(false);
-
   const [showTheme, setShowTheme] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "system");
 
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
